@@ -21,181 +21,214 @@
         }
 
         body {
-            background-color: #050301;
+            background-color: #040200;
             color: #ffffff;
             overflow-x: hidden;
-            display: block;
+            min-height: 100vh;
         }
 
-        /* HEM MOBİLDE HEM MASAÜSTÜNDE BELİRGİN VE TAM UYUMLU ARKA PLAN */
+        /* ARKA PLAN ARTIK TÜM EKRANI KAPLIYOR VE ÇOK DAHA BELİRGİN */
         .bg-fixed {
             position: fixed;
             top: 0;
-            left: 50%;
-            transform: translateX(-50%);
+            left: 0;
             width: 100%;
-            max-width: 460px; /* Mobil dikey şablona tam oturması için kısıtlandı */
             height: 100%;
             z-index: -100;
             background-image: url('ekre.png');
             background-size: cover;
-            background-position: center top;
-            filter: brightness(0.40) contrast(1.25) saturate(1.1); /* Arka tema çok daha belirgin hale getirildi */
+            background-position: center 25%;
+            background-repeat: no-repeat;
+            filter: brightness(0.45) contrast(1.3) saturate(1.15);
         }
 
+        /* SINEMATIK DEGRADE GEÇİŞİ */
         .overlay {
             position: fixed;
             top: 0;
-            left: 50%;
-            transform: translateX(-50%);
+            left: 0;
             width: 100%;
-            max-width: 460px;
             height: 100%;
-            background: linear-gradient(180deg, rgba(5, 3, 1, 0.3) 0%, rgba(5, 3, 1, 0.85) 50%, rgba(5, 3, 1, 0.98) 100%);
+            background: linear-gradient(180deg, rgba(4, 2, 0, 0.2) 0%, rgba(4, 2, 0, 0.75) 60%, rgba(4, 2, 0, 0.95) 100%);
             z-index: -99;
         }
 
+        /* RESPONSIVE ESNEK ANA KONTEYNER */
         .container {
             width: 100%;
-            max-width: 460px;
+            max-width: 900px; /* Web için genişletildi */
             margin: 0 auto;
-            padding: 40px 20px;
-            text-align: center;
+            padding: 50px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
 
-        /* LOGOLARIN TAM SİMETRİK, KESKİN VE PARLAYAN YENİ HALİ */
+        /* HEADER ALANI */
+        .header-wrapper {
+            width: 100%;
+            max-width: 500px;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        /* YENİLENEN RESMİ VE NET VEKTÖREL LOGOLAR */
         .badge-row {
             display: flex;
             justify-content: center;
-            gap: 16px;
+            align-items: center;
+            gap: 20px;
             margin-bottom: 35px;
         }
 
         .logo-badge {
-            width: 76px;
-            height: 76px;
+            width: 80px;
+            height: 80px;
             background: #ffffff;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             padding: 10px;
-            box-shadow: 0 0 18px rgba(255, 115, 0, 0.75), inset 0 0 6px rgba(0,0,0,0.1);
-            border: 2.5px solid #ff7300;
-            transition: transform 0.3s ease;
+            box-shadow: 0 0 25px rgba(255, 115, 0, 0.8), inset 0 0 8px rgba(0,0,0,0.1);
+            border: 3px solid #ff7300;
+            transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         }
 
-        .logo-badge svg, .logo-badge img {
+        .logo-badge:hover {
+            transform: scale(1.12);
+        }
+
+        .logo-badge svg {
             width: 100%;
             height: 100%;
             object-fit: contain;
         }
 
-        /* HEADER & REKLAM AJANSI DOKUNUŞU */
-        .header {
-            margin-bottom: 35px;
-        }
-
         .logo-text-main {
-            font-size: 24pt;
+            font-size: 26pt;
             font-weight: 800;
             text-transform: uppercase;
-            letter-spacing: 5px;
+            letter-spacing: 6px;
             line-height: 1.15;
             color: #ffffff;
-            text-shadow: 0 4px 12px rgba(0,0,0,0.8);
+            text-shadow: 0 4px 15px rgba(0,0,0,0.9);
         }
 
         .logo-text-accent {
-            font-size: 34pt;
+            font-size: 36pt;
             font-weight: 900;
             text-transform: uppercase;
-            letter-spacing: 2px;
-            background: linear-gradient(135deg, #ffffff 15%, #ff881a 60%, #ff3300 100%);
+            letter-spacing: 3px;
+            background: linear-gradient(135deg, #ffffff 10%, #ff881a 55%, #ff3300 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             margin: 6px 0;
-            filter: drop-shadow(0 4px 12px rgba(255, 106, 0, 0.45));
+            filter: drop-shadow(0 4px 15px rgba(255, 106, 0, 0.5));
         }
 
         .subtitle {
-            font-size: 8pt;
-            color: #e3d3c8;
+            font-size: 8.5pt;
+            color: #f5e6dc;
             text-transform: uppercase;
-            letter-spacing: 6px;
-            margin-top: 12px;
+            letter-spacing: 7px;
+            margin-top: 14px;
             font-weight: 600;
-            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+            text-shadow: 0 2px 6px rgba(0,0,0,0.6);
         }
 
-        /* SOSYOLOG GÖZÜYLE PREMIUM BLOKLAR */
+        /* WEB VE MOBIL IÇIN GRID (YAN YANA GEÇEBİLEN) KART YAPISI */
+        .content-grid {
+            width: 100%;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 25px;
+            margin-bottom: 30px;
+        }
+
+        /* 2 KARTLI YAN YANA DÜZEN (MASAÜSTÜ İÇİN SİMETRİ) */
+        @media (min-width: 768px) {
+            .content-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+            .coach-card-wrapper {
+                grid-column: span 2;
+                display: flex;
+                justify-content: center;
+            }
+            .coach-card-wrapper .premium-card {
+                max-width: 500px;
+                width: 100%;
+            }
+        }
+
+        /* PREMIUM SEFFAF KARTLAR (ARKA PLANI SÜZER) */
         .premium-card {
-            background: rgba(12, 6, 2, 0.65); /* Kartlar şeffaflaştı, arka planı süzüyor */
-            border: 1px solid rgba(255, 115, 0, 0.35);
-            border-radius: 24px;
-            padding: 28px 22px;
-            margin-bottom: 25px;
-            backdrop-filter: blur(15px);
-            -webkit-backdrop-filter: blur(15px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.7);
+            background: rgba(10, 5, 1, 0.72); 
+            border: 1px solid rgba(255, 115, 0, 0.38);
+            border-radius: 28px;
+            padding: 35px 26px;
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            box-shadow: 0 25px 50px rgba(0,0,0,0.85);
             text-align: left;
         }
 
         .card-title {
-            font-size: 11pt;
+            font-size: 11.5pt;
             font-weight: 700;
             color: #ff881a;
             text-transform: uppercase;
             letter-spacing: 3px;
-            margin-bottom: 20px;
+            margin-bottom: 24px;
             text-align: center;
-            border-bottom: 1px solid rgba(255, 115, 0, 0.25);
-            padding-bottom: 12px;
+            border-bottom: 1px solid rgba(255, 115, 0, 0.28);
+            padding-bottom: 14px;
         }
 
         .branch-item {
-            margin-bottom: 22px;
+            margin-bottom: 24px;
         }
         .branch-item:last-child { margin-bottom: 0; }
         
         .branch-header {
-            font-size: 11.5pt;
+            font-size: 12pt;
             font-weight: 700;
             color: #ffffff;
-            margin-bottom: 6px;
+            margin-bottom: 8px;
             display: flex;
             align-items: center;
             gap: 12px;
         }
-        .branch-header i { color: #ff7300; font-size: 13pt; text-shadow: 0 0 8px rgba(255,115,0,0.5); }
+        .branch-header i { color: #ff7300; font-size: 13pt; text-shadow: 0 0 10px rgba(255,115,0,0.6); }
         
         .branch-desc {
             font-size: 9.5pt;
-            color: #decbc0;
-            line-height: 1.6;
+            color: #e5d5cb;
+            line-height: 1.65;
             padding-left: 28px;
         }
 
         .pro-text {
             font-size: 10pt;
-            color: #e6dad0;
-            line-height: 1.75;
-            margin-bottom: 18px;
+            color: #ede2da;
+            line-height: 1.8;
+            margin-bottom: 20px;
         }
         .pro-text:last-child { margin-bottom: 0; }
         .pro-text b { color: #ffffff; font-weight: 700; }
-        .pro-text i { color: #ff881a; margin-right: 10px; }
+        .pro-text i { color: #ff881a; margin-right: 12px; font-size: 11pt; }
 
         /* BAŞANTRENÖR KARTI */
         .coach-section { text-align: center; }
         .coach-avatar-wrapper {
-            width: 125px;
-            height: 125px;
+            width: 130px;
+            height: 130px;
             border-radius: 50%;
-            margin: 0 auto 18px auto;
-            padding: 3px;
+            margin: 0 auto 20px auto;
+            padding: 3.5px;
             background: linear-gradient(135deg, #ff8c1a, #ff3300);
-            box-shadow: 0 10px 30px rgba(255, 115, 0, 0.4);
+            box-shadow: 0 12px 35px rgba(255, 115, 0, 0.45);
         }
         .coach-avatar {
             width: 100%;
@@ -206,28 +239,28 @@
             display: block;
         }
         .coach-name {
-            font-size: 13.5pt;
+            font-size: 14pt;
             font-weight: 800;
             letter-spacing: 2px;
             margin-bottom: 4px;
-            color: #ffffff;
         }
         .coach-title {
-            font-size: 8pt;
+            font-size: 8.5pt;
             font-weight: 700;
             color: #ff881a;
             letter-spacing: 3px;
             text-transform: uppercase;
-            margin-bottom: 18px;
+            margin-bottom: 20px;
         }
 
-        /* REKABETÇİ AKSİYON BUTONLARI */
+        /* AKSİYON BUTON GRUBU */
         .action-group {
-            margin-top: 35px;
             width: 100%;
+            max-width: 500px;
             display: flex;
             flex-direction: column;
             gap: 16px;
+            margin-top: 20px;
         }
 
         .btn-modern {
@@ -235,38 +268,43 @@
             align-items: center;
             justify-content: center;
             width: 100%;
-            height: 64px;
+            height: 66px;
             border-radius: 50px;
             font-size: 13pt;
             font-weight: 700;
             text-decoration: none;
             text-transform: uppercase;
             letter-spacing: 2px;
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            transition: all 0.2s ease;
             border: none;
-            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.6);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
+        }
+
+        .btn-modern:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 18px 40px rgba(0, 0, 0, 0.8);
         }
 
         .btn-modern:active {
-            transform: scale(0.96);
+            transform: scale(0.97);
         }
 
         .btn-call {
-            background: #1a1a1a;
+            background: #1e1e1e;
             color: #ffffff;
-            border: 1px solid rgba(255,255,255,0.1);
+            border: 1px solid rgba(255,255,255,0.12);
         }
         
         .btn-whatsapp {
             background: #25D366;
             color: #ffffff;
-            box-shadow: 0 8px 25px rgba(37, 211, 102, 0.35);
+            box-shadow: 0 10px 28px rgba(37, 211, 102, 0.35);
         }
 
         .btn-instagram {
             background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
             color: #ffffff;
-            box-shadow: 0 8px 25px rgba(220, 39, 67, 0.35);
+            box-shadow: 0 10px 28px rgba(220, 39, 67, 0.35);
         }
 
         .btn-modern i {
@@ -274,35 +312,40 @@
             margin-right: 14px;
         }
 
-        /* SOSYOLOJİK KAPANIŞ METNİ */
+        /* ALT BİLGİLER */
         .footer-cta {
+            max-width: 600px;
             font-size: 9.5pt;
-            color: #decbc0;
+            color: #e5d5cb;
             line-height: 1.8;
-            margin: 35px 0 25px 0;
-            padding: 0 10px;
+            margin: 40px 0 25px 0;
+            padding: 0 15px;
             font-style: italic;
-            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+            text-align: center;
+            text-shadow: 0 2px 6px rgba(0,0,0,0.6);
         }
 
         .location-tag {
-            font-size: 10pt;
+            font-size: 10.5pt;
             font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 4px;
             color: #ff881a;
-            margin-bottom: 45px;
-            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+            margin-bottom: 50px;
+            text-shadow: 0 2px 6px rgba(0,0,0,0.6);
         }
 
         .footer-signature {
+            width: 100%;
+            max-width: 500px;
             font-size: 7.5pt;
-            color: #615349;
+            color: #6e5e54;
             letter-spacing: 2px;
             text-transform: uppercase;
             font-weight: 600;
-            border-top: 1px solid rgba(255,255,255,0.06);
-            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.07);
+            padding-top: 25px;
+            text-align: center;
         }
     </style>
 </head>
@@ -313,77 +356,84 @@
 
     <div class="container">
         
-        <div class="badge-row">
-            <div class="logo-badge" title="World Taekwondo">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
-                    <g transform="translate(5,5) scale(0.9)">
-                        <path d="M41.2 56.5c-4.8 6.2-12.5 13.2-22.4 16.4 5.8-9.8 11.2-21.4 12.8-29.2 1.2-5.8-.4-12.8-4.2-17.5 7.8 4.2 13.2 11.8 14.8 19.5.8 4-.2 8.2-1 10.8z" fill="#0094d4"/>
-                        <path d="M43.5 24.5c4.5-5.2 12.8-10.2 22.8-11.2-6.5 7.2-14.2 17.5-18.2 25.2-3 5.8-3.5 13.2-1.5 19-6.5-5.8-9.2-14.5-8.5-22.5.5-4 2.2-8.2 5.4-10.5z" fill="#e31e24"/>
-                        <path d="M51.8 42.5c2.5-.5 5.2 0 7.2 1.5 3.5 2.5 4.2 7.8 2 11.5-2 3.5-6.8 5-10.5 3.2 2.5-2 4-5.2 3.8-8.5-.2-3.2-1.2-6.2-2.5-7.7z" fill="#f8a51b"/>
-                        <path d="M32.5 36.2c.8-1.5 2.2-2.5 3.8-2.8-.5 1.5-.5 3.2 0 4.8-.8-1-2.2-1.5-3.8-2z" fill="#111111"/>
-                    </g>
-                </svg>
+        <div class="header-wrapper">
+            <div class="badge-row">
+                <div class="logo-badge" title="World Taekwondo">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+                        <path d="M75 35c-2-8-12-14-25-12s-18 12-15 22 15 14 26 10 16-12 14-20z" fill="#e31e24"/>
+                        <path d="M25 55c5 9 16 11 28 6s14-15 10-23-18-10-28-3-14 12-10 20z" fill="#0094d4"/>
+                        <path d="M48 40c4-1 9 2 10 6s-2 9-6 10-8-2-10-6 2-9 6-10z" fill="#f8a51b"/>
+                        <path d="M15 30c2-1 4 0 5 2s0 5-2 5-4 0-5-2 0-5 2-5z" fill="#111111"/>
+                    </svg>
+                </div>
+
+                <div class="logo-badge" title="Olympic Games">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 64">
+                        <circle cx="21" cy="23" r="15" fill="none" stroke="#0081C8" stroke-width="3.2"/>
+                        <circle cx="50" cy="23" r="15" fill="none" stroke="#000000" stroke-width="3.2"/>
+                        <circle cx="79" cy="23" r="15" fill="none" stroke="#EE334E" stroke-width="3.2"/>
+                        <circle cx="35.5" cy="39" r="15" fill="none" stroke="#FCB514" stroke-width="3.2"/>
+                        <circle cx="64.5" cy="39" r="15" fill="none" stroke="#00A651" stroke-width="3.2"/>
+                    </svg>
+                </div>
+
+                <div class="logo-badge" title="Marathon & Performance">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+                        <circle cx="68" cy="22" r="7" fill="#111111"/>
+                        <path d="M66 33l-14 4-4-10c-1-2-3-3-5-3-3 0-5 2-5 5v12h-8v6h12c2 0 4-1 5-3l3-7 8 10v16h6V42l7-5z" fill="#111111"/>
+                        <path d="M40 54l-8 18h-6l10-24-3-4-9 6v6h-5v-9c0-2 1-4 3-5l14-9c2-1 4 0 5 2l5 7z" fill="#111111"/>
+                        <path d="M15 42h12v3H15zm-5 8h15v3H10zm8 8h10v3H18z" fill="#ff7300"/>
+                    </svg>
+                </div>
             </div>
 
-            <div class="logo-badge" title="Olympic Games">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 64">
-                    <circle cx="21" cy="23" r="15" fill="none" stroke="#0081C8" stroke-width="3.2"/>
-                    <circle cx="50" cy="23" r="15" fill="none" stroke="#000000" stroke-width="3.2"/>
-                    <circle cx="79" cy="23" r="15" fill="none" stroke="#EE334E" stroke-width="3.2"/>
-                    <circle cx="35.5" cy="39" r="15" fill="none" stroke="#FCB514" stroke-width="3.2"/>
-                    <circle cx="64.5" cy="39" r="15" fill="none" stroke="#00A651" stroke-width="3.2"/>
-                </svg>
-            </div>
-
-            <div class="logo-badge" title="Athletic Performance">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                    <path d="M13.5 5.5c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zM9.8 8.9L7 23h2.1l2.4-10.9 2.5 2.4V23h2v-7.5l-2.1-2 1.1-5.5c1.3 1.5 3.2 2.5 5.5 2.5v-2c-2.1 0-3.9-1.2-4.7-3l-1-2.4c-.4-1-1.4-1.7-2.6-1.7-.6 0-1.2.2-1.7.5L4.2 8.5v4.5h2V9.9l1.6-.9-.6 3.4z" fill="#111111"/>
-                </svg>
-            </div>
-        </div>
-
-        <div class="header">
             <div class="logo-text-main">Under</div>
             <div class="logo-text-accent">Taekwondo</div>
             <div class="logo-text-main">& Performance</div>
             <div class="subtitle">Exclusive Training Club</div>
         </div>
 
-        <div class="premium-card">
-            <div class="card-title">Gelişim Mimarisi</div>
+        <div class="content-grid">
             
-            <div class="branch-item">
-                <div class="branch-header"><i class="fa-solid fa-child"></i> Küçük Yaş Cimnastik</div>
-                <div class="branch-desc">Çocukların postür gelişimini mükemmelleştirirken, dijital çağın getirdiği hareketsizliği sarsılmaz bir motorik altyapı ile kırıyoruz.</div>
+            <div class="premium-card">
+                <div class="card-title">Gelişim Mimarisi</div>
+                
+                <div class="branch-item">
+                    <div class="branch-header"><i class="fa-solid fa-child"></i> Küçük Yaş Cimnastik</div>
+                    <div class="branch-desc">Çocukların postür gelişimini mükemmelleştirirken, dijital çağın getirdiği hareketsizliği sarsılmaz bir motorik altyapı ile kırıyoruz.</div>
+                </div>
+
+                <div class="branch-item">
+                    <div class="branch-header"><i class="fa-solid fa-shield-halved"></i> Olimpik Taekwondo</div>
+                    <div class="branch-desc">Sadece fiziksel savunma değil; modern çağın en çok ihtiyaç duyduğu odaklanma becerisini ve özgüveni karakter yapısına işliyoruz.</div>
+                </div>
+
+                <div class="branch-item">
+                    <div class="branch-header"><i class="fa-solid fa-gauge-high"></i> Atletik Performans</div>
+                    <div class="branch-desc">Yüksek potansiyelli sporcular için güç, sürat ve mental dayanıklılık sınırlarını bilimsel metodolojilerle yeniden çiziyoruz.</div>
+                </div>
             </div>
 
-            <div class="branch-item">
-                <div class="branch-header"><i class="fa-solid fa-shield-halved"></i> Olimpik Taekwondo</div>
-                <div class="branch-desc">Sadece fiziksel savunma değil; modern çağın en çok ihtiyaç duyduğu odaklanma becerisini ve özgüveni karakter yapısına işliyoruz.</div>
+            <div class="premium-card">
+                <div class="card-title">Neden Under Performance?</div>
+                <p class="pro-text"><i class="fa-solid fa-chart-line"></i><b>Kişiselleştirilmiş Veri Analizi:</b> Her öğrencimizin gelişim eğrisi periyodik olarak test edilir, ezbere değil tamamen bilimsel verilere göre ilerlenir.</p>
+                <p class="pro-text"><i class="fa-solid fa-users"></i><b>Seçkin Topluluk Kültürü:</b> İbrahimli'de çocuklarınızın sadece spor yapmasını değil, disiplini hayat felsefesi haline getirmiş seçkin bir çevre edinmesini sağlıyoruz.</p>
             </div>
 
-            <div class="branch-item">
-                <div class="branch-header"><i class="fa-solid fa-gauge-high"></i> Atletik Performans</div>
-                <div class="branch-desc">Yüksek potansiyelli sporcular için güç, sürat ve mental dayanıklılık sınırlarını bilimsel metodolojilerle yeniden çiziyoruz.</div>
+            <div class="coach-card-wrapper">
+                <div class="premium-card coach-section">
+                    <div class="card-title">Akademik Vizyon</div>
+                    <div class="coach-avatar-wrapper">
+                        <img src="ekrem-hoca.png" alt="Coach Ekrem" class="coach-avatar" onerror="this.src='https://via.placeholder.com/130/110903/ff6a00?text=COACH+EKREM'">
+                    </div>
+                    <div class="coach-name">COACH EKREM</div>
+                    <div class="coach-title">Kurucu & Başantrenör</div>
+                    <p class="pro-text" style="font-style: italic; text-align: center; font-size: 9.5pt; color: #e5d5cb;">
+                        "Geleceğin liderlerini, şampiyonluk disiplini ve güçlü bir karakter mimarisi ile bugünden yetiştiriyoruz."
+                    </p>
+                </div>
             </div>
-        </div>
 
-        <div class="premium-card">
-            <div class="card-title">Neden Under Performance?</div>
-            <p class="pro-text"><i class="fa-solid fa-chart-line"></i><b>Kişiselleştirilmiş Veri Analizi:</b> Her öğrencimizin gelişim eğrisi periyodik olarak test edilir, ezbere değil tamamen bilimsel verilere göre ilerlenir.</p>
-            <p class="pro-text"><i class="fa-solid fa-users"></i><b>Seçkin Topluluk Kültürü:</b> İbrahimli'de çocuklarınızın sadece spor yapmasını değil, disiplini hayat felsefesi haline getirmiş seçkin bir çevre edinmesini sağlıyoruz.</p>
-        </div>
-
-        <div class="premium-card coach-section">
-            <div class="card-title">Akademik Vizyon</div>
-            <div class="coach-avatar-wrapper">
-                <img src="ekrem-hoca.png" alt="Coach Ekrem" class="coach-avatar" onerror="this.src='https://via.placeholder.com/125/110903/ff6a00?text=COACH+EKREM'">
-            </div>
-            <div class="coach-name">COACH EKREM</div>
-            <div class="coach-title">Kurucu & Başantrenör</div>
-            <p class="pro-text" style="font-style: italic; text-align: center; font-size: 9.5pt; color: #decbc0;">
-                "Geleceğin liderlerini, şampiyonluk disiplini ve güçlü bir karakter mimarisi ile bugünden yetiştiriyoruz."
-            </p>
         </div>
 
         <div class="action-group">

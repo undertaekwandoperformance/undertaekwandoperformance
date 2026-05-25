@@ -69,7 +69,7 @@
             margin-bottom: 35px;
         }
 
-        /* LOGO SATIRI - HAFİF SOLA KAYDIRILDI */
+        /* LOGO SATIRI - HAFİF SOLA AYARLI PREMIUM YERLEŞİM */
         .badge-row {
             display: flex;
             justify-content: center;
@@ -78,7 +78,7 @@
             margin-bottom: 40px;
             flex-wrap: wrap;
             padding-left: 0px; 
-            margin-left: -15px; /* Logoları sola çeken milimetrik kaydırma */
+            margin-left: -15px;
         }
 
         .logo-wrapper {
@@ -100,10 +100,10 @@
             display: block;
         }
 
-        /* 1. LOGO (TAEKWONDO) BİRAZ DAHA BÜYÜTÜLDÜ */
+        /* 1. LOGO: İSTEDİĞİN GİBİ EKSTRA BÜYÜTÜLDÜ */
         .logo-main-premium img {
-            height: 105px !important; /* Premium ve çok daha baskın durması sağlandı */
-            max-width: 220px;
+            height: 115px !important; /* Lider ve heybetli duruş */
+            max-width: 240px;
         }
 
         .logo-olympic-centered img {
@@ -111,8 +111,8 @@
             transform: translateY(2px);
         }
 
-        /* YENİLENEN METİN LOGO TASARIMI VE DİZİLİMİ */
-        .logo-text-main {
+        /* YENİDEN TASARLANAN DIKEY VE ORTALI METİN GRUBU */
+        .logo-text-under {
             font-size: 25pt;
             font-weight: 800;
             text-transform: uppercase;
@@ -120,9 +120,10 @@
             line-height: 1.15;
             color: #ffffff;
             text-shadow: 0 4px 15px rgba(0,0,0,0.9);
+            margin-bottom: 4px;
         }
 
-        .logo-text-accent {
+        .logo-text-taekwondo {
             font-size: 35pt;
             font-weight: 900;
             text-transform: uppercase;
@@ -130,9 +131,28 @@
             background: linear-gradient(135deg, #ffffff 10%, #ff881a 55%, #ff3300 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            margin: 6px 0;
             filter: drop-shadow(0 4px 15px rgba(255, 106, 0, 0.5));
             line-height: 1.1;
+        }
+
+        .logo-text-ampersand {
+            font-size: 28pt;
+            font-weight: 700;
+            color: #ff881a;
+            margin: 8px 0;
+            text-shadow: 0 4px 12px rgba(255, 136, 26, 0.3);
+            display: block;
+        }
+
+        .logo-text-performance {
+            font-size: 25pt;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            line-height: 1.15;
+            color: #ffffff;
+            text-shadow: 0 4px 15px rgba(0,0,0,0.9);
+            margin-top: 4px;
         }
 
         .subtitle {
@@ -140,7 +160,7 @@
             color: #f5e6dc;
             text-transform: uppercase;
             letter-spacing: 7px;
-            margin-top: 16px;
+            margin-top: 20px;
             font-weight: 600;
             text-shadow: 0 2px 6px rgba(0,0,0,0.6);
         }
@@ -259,7 +279,7 @@
             margin-bottom: 20px;
         }
 
-        /* ZARİF AKSİYON BUTONLARI */
+        /* AKSİYON BUTONLARI */
         .action-group {
             width: 100%;
             max-width: 440px;
@@ -380,8 +400,11 @@
 
             </div>
 
-            <div class="logo-text-main">Under</div>
-            <div class="logo-text-accent">& Taekwondo Performance</div>
+            <div class="logo-text-under">Under</div>
+            <div class="logo-text-taekwondo">Taekwondo</div>
+            <span class="logo-text-ampersand">&</span>
+            <div class="logo-text-performance">Performance</div>
+            
             <div class="subtitle">Exclusive Training Club</div>
         </div>
 

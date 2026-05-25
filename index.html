@@ -23,7 +23,7 @@
             display: block;
         }
 
-        /* YÜKLEDİĞİN PREMIUM DAĞ GÖRSELİ ARKA PLAN (SABİT) */
+        /* PREMIUM SABİT ARKA PLAN GÖRSELİ */
         .bg-fixed {
             position: fixed;
             top: 0;
@@ -31,10 +31,10 @@
             width: 100%;
             height: 100%;
             z-index: -100;
-            background-image: url('ekre.png'); /* Görsel isminiz */
+            background-image: url('ekre.png');
             background-size: cover;
             background-position: center;
-            filter: brightness(0.25) contrast(1.1);
+            filter: brightness(0.22) contrast(1.1);
         }
 
         .overlay {
@@ -43,51 +43,59 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(180deg, rgba(8, 4, 0, 0.75) 0%, rgba(15, 7, 0, 0.95) 100%);
+            background: linear-gradient(180deg, rgba(8, 4, 0, 0.7) 0%, rgba(15, 7, 0, 0.95) 100%);
             z-index: -99;
         }
 
-        /* KAPSAYICI VE DÜZENLİ SİMETRİ */
         .container {
             width: 100%;
             max-width: 460px;
             margin: 0 auto;
-            padding: 50px 20px;
+            padding: 40px 20px;
             text-align: center;
         }
 
-        /* PREMIUM ÜST ROZET */
-        .opening-badge {
-            display: inline-block;
-            background: linear-gradient(135deg, #ff9233 0%, #ff4500 100%);
-            color: #ffffff;
-            padding: 10px 24px;
-            font-weight: 700;
-            font-size: 8.5pt;
-            text-transform: uppercase;
-            letter-spacing: 3px;
-            border-radius: 50px;
-            margin-bottom: 35px;
-            box-shadow: 0 6px 25px rgba(255, 69, 0, 0.35);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+        /* AFİŞTEKİ YUVARLAK LOGO ROZETLERİ */
+        .badge-row {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 25px;
         }
 
-        /* HEADER ALANI */
+        .logo-badge {
+            width: 60px;
+            height: 60px;
+            background: #ffffff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+            padding: 8px;
+        }
+
+        .logo-badge img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        /* HEADER */
         .header {
-            margin-bottom: 40px;
+            margin-bottom: 35px;
         }
 
         .logo-text-main {
-            font-size: 28pt;
+            font-size: 26pt;
             font-weight: 800;
             text-transform: uppercase;
             letter-spacing: 4px;
-            color: #ffffff;
             line-height: 1.1;
         }
 
         .logo-text-accent {
-            font-size: 36pt;
+            font-size: 34pt;
             font-weight: 900;
             text-transform: uppercase;
             letter-spacing: 2px;
@@ -98,24 +106,24 @@
         }
 
         .subtitle {
-            font-size: 9pt;
+            font-size: 8.5pt;
             color: #bfaea4;
             text-transform: uppercase;
             letter-spacing: 5px;
-            margin-top: 12px;
+            margin-top: 10px;
             font-weight: 600;
         }
 
-        /* AKICI VE PREMIUM SEKSİYON KUTULARI (DÜZENLİ VE KLAS) */
+        /* SEKSİON KUTULARI */
         .premium-card {
             background: rgba(255, 106, 0, 0.02);
             border: 1px solid rgba(255, 106, 0, 0.15);
             border-radius: 20px;
-            padding: 30px 20px;
-            margin-bottom: 30px;
+            padding: 28px 20px;
+            margin-bottom: 25px;
             backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(20px);
-            box-shadow: inset 0 0 15px rgba(255, 106, 0, 0.03), 0 15px 35px rgba(0,0,0,0.4);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.4);
             text-align: left;
         }
 
@@ -131,13 +139,11 @@
             padding-bottom: 12px;
         }
 
-        /* BRANŞ YÖNETİMİ */
         .branch-item {
             margin-bottom: 18px;
         }
-        .branch-item:last-child {
-            margin-bottom: 0;
-        }
+        .branch-item:last-child { margin-bottom: 0; }
+        
         .branch-header {
             font-size: 11pt;
             font-weight: 700;
@@ -147,9 +153,8 @@
             align-items: center;
             gap: 10px;
         }
-        .branch-header span {
-            color: #ff6a00;
-        }
+        .branch-header span { color: #ff6a00; }
+        
         .branch-desc {
             font-size: 9.5pt;
             color: #bfaea4;
@@ -157,27 +162,21 @@
             padding-left: 24px;
         }
 
-        /* VİZYON / METOD YAZILARI */
         .pro-text {
             font-size: 10.5pt;
             color: #cfc2b8;
             line-height: 1.7;
             margin-bottom: 15px;
         }
-        .pro-text b {
-            color: #ff881a;
-        }
+        .pro-text b { color: #ff881a; }
 
-        /* COACH EKREM ÖZEL ALAN */
-        .coach-section {
-            text-align: center;
-        }
+        /* COACH EKREM ALANI */
+        .coach-section { text-align: center; }
         .coach-avatar-wrapper {
-            width: 140px;
-            height: 140px;
+            width: 130px;
+            height: 130px;
             border-radius: 50%;
-            margin: 0 auto 18px auto;
-            position: relative;
+            margin: 0 auto 15px auto;
             padding: 3px;
             background: linear-gradient(135deg, #ff8c1a, #ff3300);
             box-shadow: 0 10px 25px rgba(255, 106, 0, 0.25);
@@ -191,10 +190,9 @@
             display: block;
         }
         .coach-name {
-            font-size: 15pt;
+            font-size: 14pt;
             font-weight: 800;
             letter-spacing: 1.5px;
-            color: #ffffff;
             margin-bottom: 4px;
         }
         .coach-title {
@@ -206,72 +204,66 @@
             margin-bottom: 15px;
         }
 
-        /* PRESTİJLİ AKSİYON BUTONLARI */
+        /* YENİ İSTEDİĞİN ÖZEL BUTON TASARIMLARI (Pill-Shaped & Canlı Renkler) */
         .action-group {
-            margin-top: 40px;
+            margin-top: 35px;
             width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 16px; /* Butonlar arası ideal boşluk */
         }
 
-        .btn {
+        .btn-modern {
             display: flex;
             align-items: center;
             justify-content: center;
             width: 100%;
-            padding: 20px;
-            margin-bottom: 18px;
-            border-radius: 14px;
-            font-size: 10.5pt;
+            height: 64px; /* Tam gönderdiğin görseldeki dolgun yükseklik */
+            border-radius: 50px; /* Kusursuz oval köşeler */
+            font-size: 13pt; /* Net ve kalın okunabilir yazı */
             font-weight: 700;
             text-decoration: none;
             text-transform: uppercase;
-            letter-spacing: 2px;
-            transition: all 0.3s ease;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+            letter-spacing: 1.5px;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            border: none;
+            outline: none;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
         }
 
-        .btn-icon {
-            margin-right: 12px;
-            font-size: 13pt;
+        .btn-modern:active {
+            transform: scale(0.98);
         }
 
-        .btn-wp {
-            background: linear-gradient(135deg, rgba(37, 211, 102, 0.15) 0%, rgba(37, 211, 102, 0.03) 100%);
-            color: #25D366;
-            border: 1px solid rgba(37, 211, 102, 0.35);
-        }
-        .btn-wp:hover {
-            background: rgba(37, 211, 102, 0.2);
-            transform: translateY(-2px);
-        }
-
-        .btn-insta {
-            background: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.01) 100%);
+        /* 1. ARA BUTONU (Koyu Antrasit / Siyah Konsept) */
+        .btn-call {
+            background: #222222;
             color: #ffffff;
-            border: 1px solid rgba(225, 48, 108, 0.35);
         }
-        .btn-insta:hover {
-            border-color: #ff6a00;
-            transform: translateY(-2px);
-        }
-
-        .btn-phone {
-            background: linear-gradient(135deg, #ff8c1a 0%, #ff3300 100%);
+        
+        /* 2. WHATSAPP BUTONU (Canlı Yeşil Konsept) */
+        .btn-whatsapp {
+            background: #25D366;
             color: #ffffff;
-            border: 1px solid rgba(255, 255, 255, 0.15);
-        }
-        .btn-phone:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 15px 35px rgba(255, 51, 0, 0.4);
         }
 
-        /* KAPANIŞ METİNLERİ */
+        /* 3. INSTAGRAM BUTONU (Özel Turuncu-Pembe Degrade Geçişi) */
+        .btn-instagram {
+            background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+            color: #ffffff;
+        }
+
+        .btn-modern i {
+            font-size: 16pt;
+            margin-right: 14px; /* İkon ile yazı arasındaki ideal mesafe */
+        }
+
+        /* ALT BİLGİLER */
         .footer-cta {
-            font-size: 10.5pt;
+            font-size: 10pt;
             color: #cfc2b8;
-            line-height: 1.8;
-            font-weight: 400;
-            margin: 40px 0 25px 0;
-            padding: 0 10px;
+            line-height: 1.7;
+            margin: 35px 0 25px 0;
             font-style: italic;
         }
 
@@ -281,17 +273,17 @@
             font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 4px;
-            margin-bottom: 50px;
+            margin-bottom: 45px;
         }
 
         .footer-signature {
             font-size: 8pt;
             color: #665952;
-            letter-spacing: 2.5px;
+            letter-spacing: 2px;
             text-transform: uppercase;
             font-weight: 600;
             border-top: 1px solid rgba(255,255,255,0.05);
-            padding-top: 25px;
+            padding-top: 20px;
         }
     </style>
 </head>
@@ -302,7 +294,11 @@
 
     <div class="container">
         
-        <div class="opening-badge">Premium Lansman & Açılış</div>
+        <div class="badge-row">
+            <div class="logo-badge"><img src="https://upload.wikimedia.org/wikipedia/commons/4/4e/World_Taekwondo_logo.svg" alt="WT"></div>
+            <div class="logo-badge"><img src="https://upload.wikimedia.org/wikipedia/commons/5/5c/Olympic_Rings_Icon.svg" alt="Olympic"></div>
+            <div class="logo-badge"><img src="https://www.svgrepo.com/show/271714/running-runner.svg" alt="Performance"></div>
+        </div>
 
         <div class="header">
             <div class="logo-text-main">Under</div>
@@ -312,16 +308,16 @@
         </div>
 
         <div class="premium-card">
-            <div class="card-title">3 Branş • Tek Metot</div>
+            <div class="card-title">Üç Branş • Tek Method</div>
             
             <div class="branch-item">
-                <div class="branch-header"><span>🥋</span> Taekwondo</div>
-                <div class="branch-desc">Olimpik disiplin, yüksek özgüven gelişimi ve elit seviye teknik savunma sanatı eğitimi.</div>
+                <div class="branch-header"><span>⚡</span> Atletik Performans</div>
+                <div class="branch-desc">Güç, sürat ve fonksiyonel dayanıklılığın modern spor bilimi testleriyle optimize edilmesi.</div>
             </div>
 
             <div class="branch-item">
-                <div class="branch-header"><span>🏃‍♂️</span> Atletik Performans</div>
-                <div class="branch-desc">Güç, sürat ve fonksiyonel dayanıklılığın modern spor bilimi testleriyle optimize edilmesi.</div>
+                <div class="branch-header"><span>🥋</span> Taekwondo</div>
+                <div class="branch-desc">Olimpik disiplin, yüksek özgüven gelişimi ve elit seviye teknik savunma sanatı eğitimi.</div>
             </div>
 
             <div class="branch-item">
@@ -334,39 +330,38 @@
             <div class="card-title">Profesyonel Yaklaşım</div>
             <p class="pro-text"><b>• Veri Odaklı Analiz:</b> Sporcularımızın periyodik gelişim süreçleri bilimsel parametrelerle kayıt altına alınır.</p>
             <p class="pro-text"><b>• Kişiselleştirilmiş Program:</b> Bireyin yaş, anatomi ve fiziksel kapasitesine en uygun gelişim haritası belirlenir.</p>
-            <p class="pro-text"><b>• Üst Düzey Karakter:</b> Yalnızca fiziksel teknik değil; mental dayanıklılık, liderlik ve sarsılmaz bir disiplin vizyonu aktarılır.</p>
         </div>
 
         <div class="premium-card coach-section">
             <div class="card-title">Akademik Liderlik</div>
-            
             <div class="coach-avatar-wrapper">
-                <img src="ekrem-hoca.png" alt="Coach Ekrem" class="coach-avatar" onerror="this.src='https://via.placeholder.com/140/110903/ff6a00?text=COACH+EKREM'">
+                <img src="ekrem-hoca.png" alt="Coach Ekrem" class="coach-avatar" onerror="this.src='https://via.placeholder.com/130/110903/ff6a00?text=COACH+EKREM'">
             </div>
-            
             <div class="coach-name">COACH EKREM</div>
             <div class="coach-title">Kurucu & Başantrenör</div>
             <p class="pro-text" style="font-style: italic; text-align: center; font-size: 10pt;">
-                "Amacımız yalnızca teknik öğretmek değil; kazanma mentalitesini, elit disiplini ve karakter bütünlüğünü sporcularımızın hayat tarzı haline getirmektir."
+                "Kazanma mentalitesini ve elit disiplini sporcularımızın hayat tarzı haline getiriyoruz."
             </p>
         </div>
 
         <div class="action-group">
-            <a href="https://wa.me/905550727670?text=Merhaba,%20İbrahimli%20Under%20Taekwondo%20Premium%20üyelik%20ve%20tanışma%20seansı%20hakkında%20bilgi%20almak%20istiyorum." class="btn btn-wp" target="_blank">
-                <span class="btn-icon"><i class="fa-brands fa-whatsapp"></i></span> VIP Özel WhatsApp Hattı
+            
+            <a href="tel:+905550727670" class="btn-modern btn-call">
+                <i class="fa-solid fa-phone"></i> ARA
             </a>
 
-            <a href="https://www.instagram.com/coach.ekremrh7/" class="btn btn-insta" target="_blank">
-                <span class="btn-icon"><i class="fa-brands fa-instagram"></i></span> Kurumsal Instagram Portfolyosu
+            <a href="https://wa.me/905550727670?text=Merhaba,%20İbrahimli%20Under%20Taekwondo%20Premium%20üyelik%20hakkında%20bilgi%20almak%20istiyorum." class="btn-modern btn-whatsapp" target="_blank">
+                <i class="fa-brands fa-whatsapp"></i> WHATSAPP
             </a>
 
-            <a href="tel:+905550727670" class="btn btn-phone">
-                <span class="btn-icon"><i class="fa-solid fa-phone"></i></span> Detaylı Bilgi & Rezervasyon
+            <a href="https://www.instagram.com/coach.ekremrh7/" class="btn-modern btn-instagram" target="_blank">
+                <i class="fa-brands fa-instagram"></i> INSTAGRAM
             </a>
+            
         </div>
 
         <div class="footer-cta">
-            "Kendiniz ve çocuklarınız için en üst düzey atletik disiplini, İbrahimli'nin en seçkin kulübünde deneyimleyin. Butik hizmet politikamız gereği kontenjanlarımız tamamen sınırlıdır."
+            "Kendiniz ve çocuklarınız için en üst düzey atletik disiplini, İbrahimli'nin en seçkin kulübünde deneyimleyin."
         </div>
         
         <div class="location-tag">📍 İbrahimli, Gaziantep</div>

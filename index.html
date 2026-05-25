@@ -3,23 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Under Taekwondo & Performance - İbrahimli VIP</title>
+    <title>Under Taekwondo & Performance - İbrahimli VIP Presentation</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
+        /* GLOBAL CODES & FIXED VIDEO BACKGROUND */
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
-            font-family: 'Montserrat', 'Helvetica Neue', Arial, sans-serif;
+            font-family: 'Montserrat', Arial, sans-serif;
         }
 
         body {
-            background-color: #080400; /* Koyu premium antrasit-siyah zemin */
+            background-color: #080400;
             color: #ffffff;
             overflow-x: hidden;
-            display: block;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 40px;
+            padding: 20px 10px;
         }
 
-        /* Dinamik Arka Plan Videosu */
         .video-bg {
             position: fixed;
             right: 0;
@@ -30,223 +38,211 @@
             height: auto;
             z-index: -100;
             object-fit: cover;
-            filter: brightness(0.2) contrast(1.2) saturate(140%);
+            filter: brightness(0.18) contrast(1.2) saturate(130%);
         }
 
-        /* İbrahimli Konseptine Özel Gece Overlay Katmanı */
         .overlay {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(180deg, rgba(8, 4, 0, 0.85) 0%, rgba(15, 7, 0, 0.98) 100%);
+            background: linear-gradient(180deg, rgba(8, 4, 0, 0.80) 0%, rgba(15, 7, 0, 0.95) 100%);
             z-index: -99;
         }
 
-        .container {
+        /* SLIDE CONTAINER DESIGN (MOBILE RESPONSIVE DECK) */
+        .slide-container {
+            width: 100%;
             max-width: 480px;
-            margin: 0 auto;
-            padding: 60px 24px;
+            min-height: 680px;
+            background: rgba(255, 106, 0, 0.02);
+            border: 1px solid rgba(255, 106, 0, 0.15);
+            border-radius: 24px;
+            padding: 40px 24px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            box-shadow: inset 0 0 20px rgba(255, 106, 0, 0.05), 0 20px 40px rgba(0,0,0,0.6);
             text-align: center;
+            position: relative;
         }
 
-        /* Elit Lansman Rozeti */
+        /* BADGES & HEADER */
         .opening-badge {
             display: inline-block;
             background: linear-gradient(135deg, #ff9233 0%, #ff4500 100%);
             color: #ffffff;
-            padding: 10px 26px;
+            padding: 8px 20px;
             font-weight: 700;
-            font-size: 8.5pt;
+            font-size: 8pt;
             text-transform: uppercase;
-            letter-spacing: 3.5px;
+            letter-spacing: 3px;
             border-radius: 50px;
-            margin-bottom: 40px;
+            margin-bottom: 25px;
             box-shadow: 0 6px 25px rgba(255, 69, 0, 0.35);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        /* Markalama ve Başlık Alanı */
-        .header {
-            margin-bottom: 45px;
         }
 
         .logo-text-main {
-            font-size: 30pt;
+            font-size: 26pt;
             font-weight: 800;
             text-transform: uppercase;
-            letter-spacing: 5px;
-            color: #ffffff;
+            letter-spacing: 4px;
             line-height: 1.1;
         }
 
         .logo-text-accent {
-            font-size: 38pt;
+            font-size: 34pt;
             font-weight: 900;
             text-transform: uppercase;
-            letter-spacing: 2px;
+            letter-spacing: 1px;
             color: #ff6a00;
             background: linear-gradient(135deg, #ffffff 10%, #ff881a 50%, #ff3300 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            margin: 6px 0;
+            margin: 4px 0;
         }
 
         .subtitle {
-            font-size: 9.5pt;
+            font-size: 9pt;
             color: #bfaea4;
             text-transform: uppercase;
-            letter-spacing: 6px;
-            margin-top: 14px;
+            letter-spacing: 5px;
+            margin-top: 10px;
             font-weight: 600;
         }
 
-        /* Özel Metod Kutusu - Turuncu Işıltılı Şık Cam Efekti */
-        .method-box {
-            background: rgba(255, 106, 0, 0.02);
-            border: 1px solid rgba(255, 106, 0, 0.15);
-            border-radius: 24px;
-            padding: 32px 20px;
-            margin-bottom: 45px;
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            box-shadow: inset 0 0 20px rgba(255, 106, 0, 0.05), 0 15px 35px rgba(0,0,0,0.4);
-        }
-
-        .method-title {
-            font-size: 11pt;
-            font-weight: 700;
+        /* TITLES & TYPOGRAPHY FOR INSIDE SLIDES */
+        .slide-inner-title {
+            font-size: 18pt;
+            font-weight: 800;
+            text-transform: uppercase;
             color: #ff881a;
-            text-transform: uppercase;
-            letter-spacing: 3px;
-            margin-bottom: 24px;
+            letter-spacing: 2px;
+            margin-bottom: 25px;
+            width: 100%;
         }
 
-        .branches {
+        .slide-p {
+            font-size: 11pt;
+            color: #cfc2b8;
+            line-height: 1.7;
+            font-weight: 400;
+            margin-bottom: 20px;
+        }
+
+        /* METHOD & TILES STRUCT */
+        .method-box-inside {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 16px;
+            padding: 20px;
+            width: 100%;
+            margin-bottom: 15px;
+            text-align: left;
+        }
+
+        .method-box-inside h4 {
+            color: #ff6a00;
+            font-size: 12pt;
+            margin-bottom: 8px;
+            text-transform: uppercase;
             display: flex;
-            justify-content: space-between;
             align-items: center;
+            gap: 10px;
         }
 
-        .branch-item {
-            flex: 1;
-            font-size: 8.5pt;
-            color: #f5e9e2;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            font-weight: 700;
-            line-height: 1.5;
-        }
-        
-        .branch-item span {
-            display: block;
-            font-size: 22pt;
+        /* CHARTS & NUMBERS */
+        .big-number {
+            font-size: 65pt;
+            font-weight: 900;
+            color: #ff6a00;
+            background: linear-gradient(135deg, #ffffff 0%, #ff881a 60%, #ff3300 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            line-height: 1;
             margin-bottom: 10px;
-            filter: drop-shadow(0 4px 8px rgba(255,106,0,0.2));
         }
 
-        /* Geliştirilmiş Elit Aksiyon Butonları */
+        .bar-container {
+            width: 100%;
+            margin-top: 20px;
+        }
+        .bar-row {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+        .bar-label {
+            font-size: 9pt;
+            font-weight: 700;
+            letter-spacing: 1px;
+            margin-bottom: 6px;
+            color: #fff;
+        }
+        .bar-bg {
+            background: rgba(255,255,255,0.08);
+            height: 30px;
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid rgba(255,106,0,0.1);
+        }
+        .bar-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #ff8c1a 0%, #ff3300 100%);
+            display: flex;
+            align-items: center;
+            padding-left: 12px;
+            font-size: 8.5pt;
+            font-weight: 800;
+            color: #fff;
+        }
+
+        /* PREMIUM BUTTONS (SLIDE 12) */
         .btn {
             display: flex;
             align-items: center;
             justify-content: center;
             width: 100%;
-            padding: 22px;
-            margin-bottom: 22px;
+            padding: 20px;
+            margin-bottom: 16px;
             border-radius: 16px;
-            font-size: 11pt;
+            font-size: 10.5pt;
             font-weight: 700;
             text-decoration: none;
             text-transform: uppercase;
-            letter-spacing: 2px;
-            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-            box-shadow: 0 12px 35px rgba(0,0,0,0.5);
-            border: 1px solid transparent;
-            position: relative;
+            letter-spacing: 1.5px;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.4);
         }
 
-        .btn-icon {
-            margin-right: 14px;
-            font-size: 15pt;
-            display: flex;
-            align-items: center;
-        }
+        .btn-icon { margin-right: 12px; font-size: 14pt; }
 
-        /* 1. Geliştirilmiş Elit WhatsApp Butonu (Zümrüt Cam Efekti) */
         .btn-wp {
             background: linear-gradient(135deg, rgba(37, 211, 102, 0.15) 0%, rgba(37, 211, 102, 0.03) 100%);
             color: #25D366;
             border: 1px solid rgba(37, 211, 102, 0.35);
-            backdrop-filter: blur(15px);
-            -webkit-backdrop-filter: blur(15px);
         }
-        .btn-wp:hover {
-            background: rgba(37, 211, 102, 0.22);
-            border-color: #30f077;
-            color: #30f077;
-            transform: translateY(-2px);
-            box-shadow: 0 15px 30px rgba(37, 211, 102, 0.2);
-        }
-
-        /* 2. Geliştirilmiş Elit Instagram Butonu (Lüks Gece Gradyanı) */
         .btn-insta {
             background: linear-gradient(135deg, rgba(225, 48, 108, 0.12) 0%, rgba(245, 96, 64, 0.04) 100%);
             color: #ffffff;
             border: 1px solid rgba(225, 48, 108, 0.35);
-            backdrop-filter: blur(15px);
-            -webkit-backdrop-filter: blur(15px);
         }
-        .btn-insta:hover {
-            background: linear-gradient(135deg, rgba(225, 48, 108, 0.22) 0%, rgba(245, 96, 64, 0.1) 100%);
-            border-color: #ff6a00;
-            color: #f56040;
-            transform: translateY(-2px);
-            box-shadow: 0 15px 30px rgba(225, 48, 108, 0.2);
-        }
-
-        /* 3. Ana Rezervasyon Hattı: Afişle Birebir Premium Ateş Turuncusu (Maksimum Dönüşüm) */
         .btn-phone {
             background: linear-gradient(135deg, #ff8c1a 0%, #ff3300 100%);
             color: #ffffff;
-            font-weight: 800;
             border: 1px solid rgba(255, 255, 255, 0.15);
-            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
-        }
-        .btn-phone:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 18px 40px rgba(255, 51, 0, 0.45);
-            filter: saturate(115%);
         }
 
-        /* Seçkin Hitabet Metni */
-        .cta-text {
-            font-size: 11pt;
-            color: #cfc2b8;
-            margin-top: 40px;
-            line-height: 1.8;
-            font-weight: 300;
-            letter-spacing: 0.5px;
-            padding: 0 10px;
-        }
-
-        .location-tag {
-            margin-top: 25px;
-            font-size: 11.5pt;
-            color: #ff881a;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 4px;
-        }
-
-        /* Sayfa Altı Kurumsal İmza */
-        .footer {
-            margin-top: 65px;
+        /* FOOTER & ACCENTS */
+        .slide-counter {
+            position: absolute;
+            bottom: 20px;
             font-size: 8pt;
-            color: #665952;
-            letter-spacing: 2.5px;
-            text-transform: uppercase;
-            font-weight: 600;
+            color: rgba(255, 255, 255, 0.2);
+            letter-spacing: 2px;
         }
     </style>
 </head>
@@ -254,53 +250,144 @@
 
     <video autoplay muted loop playsinline class="video-bg" poster="https://images.unsplash.com/photo-1555597673-b21d5c935865?q=80&w=1200">
         <source src="https://assets.mixkit.co/videos/preview/mixkit-man-holding-a-kickboxing-pose-39841-large.mp4" type="video/mp4">
-        <source src="https://player.vimeo.com/external/459389137.sd.mp4?s=9e4fc4f2f0b78cf3fa976077ff653ccdfdbe649c&profile_id=165&oauth2_token_id=57447761" type="video/mp4">
     </video>
-    
     <div class="overlay"></div>
 
-    <div class="container">
-        
+    <div class="slide-container" id="slide1">
         <div class="opening-badge">Premium Lansman & Açılış</div>
-
-        <div class="header">
+        <div class="header" style="margin-bottom: 0;">
             <div class="logo-text-main">Under</div>
             <div class="logo-text-accent">Taekwondo</div>
             <div class="logo-text-main">& Performance</div>
             <div class="subtitle">Exclusive Training Club</div>
+            <div style="font-size: 10pt; color: #ff881a; font-weight: 700; margin-top: 30px; letter-spacing: 3px;">📍 İBRAHİMLİ / GAZİANTEP</div>
         </div>
+        <div class="slide-counter">01 / 12</div>
+    </div>
 
-        <div class="method-box">
-            <div class="method-title">3 Branş • Tek Metot</div>
-            <div class="branches">
-                <div class="branch-item"><span>🥋</span>Taekwondo</div>
-                <div class="branch-item"><span>🏃‍♂️</span>Atletik<br>Performans</div>
-                <div class="branch-item"><span>🤸‍♂️</span>Cimnastik</div>
+    <div class="slide-container" id="slide2">
+        <div class="slide-inner-title">Vizyonumuz</div>
+        <div class="big-number" style="font-size: 40pt; margin-bottom: 20px;">3 BRANŞ<br><span style="color: #fff; background: none; -webkit-text-fill-color: initial;">TEK METOT</span></div>
+        <div class="slide-p">Disiplin, atletik performans ve koordinasyonun kusursuz uyumu. Geleceğin şampiyonlarını bugünün modern spor bilimiyle hazırlıyoruz.</div>
+        <div class="slide-counter">02 / 12</div>
+    </div>
+
+    <div class="slide-container" id="slide3">
+        <div class="slide-inner-title">Eğitim Alanları</div>
+        <div class="method-box-inside">
+            <h4>🥋 TAEKWONDO</h4>
+            <p style="font-size: 10pt; color: #aaa;">Olimpik ruh, özgüven gelişimi ve elit savunma sanatı disiplini.</p>
+        </div>
+        <div class="method-box-inside">
+            <h4>🏃‍♂️ ATLETİK PERFORMANS</h4>
+            <p style="font-size: 10pt; color: #aaa;">Güç, hız ve dayanıklılığın bilimsel testlerle optimize edilmesi.</p>
+        </div>
+        <div class="method-box-inside">
+            <h4>🤸‍♂️ CİMNASTİK</h4>
+            <p style="font-size: 10pt; color: #aaa;">Esneklik, denge ve tüm spor branşları için sarsılmaz bir temel motorik yapı.</p>
+        </div>
+        <div class="slide-counter">03 / 12</div>
+    </div>
+
+    <div class="slide-container" id="slide4">
+        <div class="slide-inner-title">Seçkin Atmosfer</div>
+        <div class="slide-p" style="font-weight: 700; color: #fff;">İBRAHİMLİ'NİN EN PRESTİJLİ STÜDYOSU</div>
+        <div class="slide-p">Sadece en iyiler için tasarlandı. En yüksek hijyen standartları, birinci sınıf modern ekipmanlar ve tamamen odaklanmayı sağlayan lüks iç mimari.</div>
+        <div class="slide-counter">04 / 12</div>
+    </div>
+
+    <div class="slide-container" id="slide5">
+        <div class="slide-inner-title">Neden Under?</div>
+        <div class="slide-p" style="text-align: left; font-size: 10.5pt; margin-bottom: 15px;">
+            <b style="color: #ff881a;">• Veri Odaklı Takip:</b> Her sporcunun gelişim süreci profesyonel analizlerle kayıt altına alınır.
+        </div>
+        <div class="slide-p" style="text-align: left; font-size: 10.5pt; margin-bottom: 15px;">
+            <b style="color: #ff881a;">• Kişiselleştirilmiş Metot:</b> Yaş ve fiziksel kapasiteye en uygun şampiyonluk haritası çıkarılır.
+        </div>
+        <div class="slide-p" style="text-align: left; font-size: 10.5pt;">
+            <b style="color: #ff881a;">• Mental Dayanıklılık:</b> Teknik gelişimin yanı sıra sarsılmaz bir karakter ve liderlik eğitimi verilir.
+        </div>
+        <div class="slide-counter">05 / 12</div>
+    </div>
+
+    <div class="slide-container" id="slide6">
+        <div class="slide-inner-title">Maksimum Verim</div>
+        <div class="big-number">%100</div>
+        <div class="slide-p" style="font-weight: 700; color: #fff; letter-spacing: 1px;">POTANSİYEL GELİŞİM ODAĞI</div>
+        <div class="slide-p">Akademimizde geçirilen her saniye, sınırları zorlamak ve gerçek gücü keşfetmek için planlanmıştır.</div>
+        <div class="slide-counter">06 / 12</div>
+    </div>
+
+    <div class="slide-container" id="slide7">
+        <div class="slide-inner-title">Başantrenör</div>
+        
+        <div style="width: 160px; height: 160px; border-radius: 50%; overflow: hidden; border: 4px solid #ff6a00; margin-bottom: 20px; box-shadow: 0 10px 25px rgba(255,106,0,0.2); background: rgba(255,255,255,0.05); display: flex; align-items: center; justify-content: center;">
+            <img src="https://via.placeholder.com/160x160/150700/ff6a00?text=COACH+EKREM" alt="Coach Ekrem" style="width: 100%; height: 100%; object-fit: cover;">
+        </div>
+        
+        <div class="logo-text-main" style="font-size: 18pt; color: #fff;">COACH EKREM</div>
+        <div style="font-size: 10pt; color: #ff881a; font-weight: 700; margin-bottom: 15px; letter-spacing: 2px;">KURUCU & BAŞANTRENÖR</div>
+        <div class="slide-p" style="font-style: italic; font-size: 10pt;">"Sadece dövüşmeyi değil, kazanma mentalitesini ve disiplini öğretiyoruz. İbrahimli'de sporun tanımını yeniden yapıyoruz."</div>
+        <div class="slide-counter">07 / 12</div>
+    </div>
+
+    <div class="slide-container" id="slide8">
+        <div class="slide-inner-title">Gelişim Hızı</div>
+        <div class="slide-p">Geleneksel, tek düze antrenmanların aksine üç branşın entegre edildiği özel kulüp metodumuz çocukların motorik gelişim sürecini ciddi oranda hızlandırır.</div>
+        <div class="slide-counter">08 / 12</div>
+    </div>
+
+    <div class="slide-container" id="slide9">
+        <i class="fa-solid fa-quote-left" style="color: #ff6a00; font-size: 35pt; margin-bottom: 20px; opacity: 0.6;"></i>
+        <div class="slide-p" style="font-size: 16pt; font-weight: 700; color: #fff; font-style: italic; line-height: 1.4;">"Zayıflık bir seçimdir, güç ise bir karardır. Kararınızı bugün verin."</div>
+        <div style="width: 60px; height: 2px; background: #ff6a00; margin: 20px auto;"></div>
+        <div style="font-size: 8pt; letter-spacing: 3px; color: #ff881a; font-weight: 700;">UNDER PERFORMANCE PHILOSOPHY</div>
+        <div class="slide-counter">09 / 12</div>
+    </div>
+
+    <div class="slide-container" id="slide10">
+        <div class="slide-inner-title">Metodoloji Analizi</div>
+        <div class="bar-container">
+            <div class="bar-row">
+                <div class="bar-label">UNDER METHOD</div>
+                <div class="bar-bg"><div class="bar-fill" style="width: 95%;">%95 VERİM</div></div>
+            </div>
+            <div class="bar-row">
+                <div class="bar-label">STANDART PROGRAMLAR</div>
+                <div class="bar-bg"><div class="bar-fill" style="width: 45%; background: rgba(255,255,255,0.1); color: #aaa;">%45 VERİM</div></div>
             </div>
         </div>
+        <div class="slide-p" style="font-size: 9.5pt; margin-top: 20px; color: #aaa;">Bilimsel veriler ışığında optimize edilen antrenman sistematiği.</div>
+        <div class="slide-counter">10 / 12</div>
+    </div>
+
+    <div class="slide-container" id="slide11">
+        <div class="slide-inner-title">Sınırlı Kontenjan</div>
+        <div class="big-number" style="font-size: 38pt; margin-bottom: 15px;">PRIVÉ<br><span style="color:#fff; background:none; -webkit-text-fill-color: initial; font-size: 20pt; letter-spacing: 4px;">KAYIT SÜRECİ</span></div>
+        <div class="slide-p">Butik yapımız ve her sporcuya özel ilgi ilkemiz gereği kontenjanlarımız tamamen sınırlıdır. İbrahimli'de seçkin bir başlangıç için yerinizi ayırtın.</div>
+        <div class="slide-counter">11 / 12</div>
+    </div>
+
+    <div class="slide-container" id="slide12">
+        <div class="slide-inner-title" style="margin-bottom: 35px;">İletişim & Rezervasyon</div>
 
         <a href="https://wa.me/905550727670?text=Merhaba,%20İbrahimli%20Under%20Taekwondo%20Premium%20üyelik%20ve%20tanışma%20seansı%20hakkında%20bilgi%20almak%20istiyorum." class="btn btn-wp" target="_blank">
-            <span class="btn-icon">💬</span> VIP Özel WhatsApp Hattı
+            <span class="btn-icon"><i class="fa-brands fa-whatsapp"></i></span> VIP Özel WhatsApp Hattı
         </a>
 
         <a href="https://www.instagram.com/coach.ekremrh7/" class="btn btn-insta" target="_blank">
-            <span class="btn-icon">📸</span> Kurumsal Instagram Portfolyosu
+            <span class="btn-icon"><i class="fa-brands fa-instagram"></i></span> Instagram Portfolyosu
         </a>
 
         <a href="tel:+905550727670" class="btn btn-phone">
-            <span class="btn-icon">📞</span> Özel Detaylı Bilgi & Rezervasyon
+            <span class="btn-icon"><i class="fa-solid fa-phone"></i></span> Detaylı Bilgi & Rezervasyon
         </a>
 
-        <div class="cta-text">
-            "Çocuklarınız ve kendiniz için en üst düzey disiplini, İbrahimli'nin en prestijli kulübünde deneyimleyin. Sınırlı kontenjan ile kişiye özel takip."
-        </div>
-        
-        <div class="location-tag">📍 İbrahimli, Gaziantep</div>
-
-        <div class="footer">
+        <div style="font-size: 10pt; color: #ff881a; font-weight: 700; margin-top: 25px; letter-spacing: 3px;">📍 İbrahimli, Gaziantep</div>
+        <div style="margin-top: 30px; font-size: 7.5pt; color: #665952; letter-spacing: 2px; font-weight: 600; text-transform: uppercase;">
             UNDER PERFORMANCE • COACH EKREM • © 2026 PRIVÉ
         </div>
-
+        <div class="slide-counter">12 / 12</div>
     </div>
 
 </body>

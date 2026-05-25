@@ -1,3 +1,15 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Under Taekwondo & Performance - İbrahimli VIP</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Montserrat', 'Helvetica Neue', Arial, sans-serif;
         }
 
         body {
@@ -134,7 +146,7 @@
             filter: drop-shadow(0 4px 8px rgba(255,106,0,0.2));
         }
 
-        /* REKLAM UZMANI ÖZEL: SÜPER GELİŞTİRİLMİŞ PREMİUM BUTONLAR */
+        /* Geliştirilmiş Elit Aksiyon Butonları */
         .btn {
             display: flex;
             align-items: center;
@@ -143,7 +155,7 @@
             padding: 22px;
             margin-bottom: 22px;
             border-radius: 16px;
-            font-size: 11.5pt;
+            font-size: 11pt;
             font-weight: 700;
             text-decoration: none;
             text-transform: uppercase;
@@ -156,58 +168,55 @@
 
         .btn-icon {
             margin-right: 14px;
-            font-size: 16pt;
+            font-size: 15pt;
             display: flex;
             align-items: center;
         }
 
-        /* 1. SÜPER VIP WHATSAPP BUTONU (Ultra Canlı Zümrüt Cam Efekti) */
+        /* 1. Geliştirilmiş Elit WhatsApp Butonu (Zümrüt Cam Efekti) */
         .btn-wp {
-            background: linear-gradient(135deg, rgba(37, 211, 102, 0.22) 0%, rgba(37, 211, 102, 0.05) 100%);
+            background: linear-gradient(135deg, rgba(37, 211, 102, 0.15) 0%, rgba(37, 211, 102, 0.03) 100%);
             color: #25D366;
-            border: 1px solid rgba(37, 211, 102, 0.45);
+            border: 1px solid rgba(37, 211, 102, 0.35);
             backdrop-filter: blur(15px);
             -webkit-backdrop-filter: blur(15px);
-            box-shadow: 0 8px 25px rgba(37, 211, 102, 0.15);
         }
         .btn-wp:hover {
-            background: rgba(37, 211, 102, 0.3);
+            background: rgba(37, 211, 102, 0.22);
             border-color: #30f077;
-            color: #ffffff;
-            transform: translateY(-3px);
-            box-shadow: 0 15px 35px rgba(37, 211, 102, 0.35);
+            color: #30f077;
+            transform: translateY(-2px);
+            box-shadow: 0 15px 30px rgba(37, 211, 102, 0.2);
         }
 
-        /* 2. SÜPER VIP INSTAGRAM BUTONU (Lüks Ateş & Mor Premium Geçişi) */
+        /* 2. Geliştirilmiş Elit Instagram Butonu (Lüks Gece Gradyanı) */
         .btn-insta {
-            background: linear-gradient(135deg, rgba(225, 48, 108, 0.18) 0%, rgba(245, 96, 64, 0.06) 100%);
+            background: linear-gradient(135deg, rgba(225, 48, 108, 0.12) 0%, rgba(245, 96, 64, 0.04) 100%);
             color: #ffffff;
-            border: 1px solid rgba(225, 48, 108, 0.4);
+            border: 1px solid rgba(225, 48, 108, 0.35);
             backdrop-filter: blur(15px);
             -webkit-backdrop-filter: blur(15px);
-            box-shadow: 0 8px 25px rgba(225, 48, 108, 0.1);
         }
         .btn-insta:hover {
-            background: linear-gradient(135deg, rgba(225, 48, 108, 0.3) 0%, rgba(245, 96, 64, 0.15) 100%);
+            background: linear-gradient(135deg, rgba(225, 48, 108, 0.22) 0%, rgba(245, 96, 64, 0.1) 100%);
             border-color: #ff6a00;
-            color: #ffffff;
-            transform: translateY(-3px);
-            box-shadow: 0 15px 35px rgba(225, 48, 108, 0.3);
+            color: #f56040;
+            transform: translateY(-2px);
+            box-shadow: 0 15px 30px rgba(225, 48, 108, 0.2);
         }
 
-        /* 3. ANA AKSİYON REZERVASYON BUTONU: Afişle Birebir Kor Turuncu Degrade */
+        /* 3. Ana Rezervasyon Hattı: Afişle Birebir Premium Ateş Turuncusu (Maksimum Dönüşüm) */
         .btn-phone {
             background: linear-gradient(135deg, #ff8c1a 0%, #ff3300 100%);
             color: #ffffff;
             font-weight: 800;
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.15);
             text-shadow: 0 2px 4px rgba(0,0,0,0.3);
-            box-shadow: 0 12px 30px rgba(255, 51, 0, 0.3);
         }
         .btn-phone:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 20px 45px rgba(255, 51, 0, 0.55);
-            filter: saturate(120%) brightness(1.05);
+            transform: translateY(-3px);
+            box-shadow: 0 18px 40px rgba(255, 51, 0, 0.45);
+            filter: saturate(115%);
         }
 
         /* Seçkin Hitabet Metni */
@@ -243,7 +252,6 @@
 </head>
 <body>
 
-    <!-- Arka Planda Akıcı Şekilde Dönen Premium Taekwondo Videosu -->
     <video autoplay muted loop playsinline class="video-bg" poster="https://images.unsplash.com/photo-1555597673-b21d5c935865?q=80&w=1200">
         <source src="https://assets.mixkit.co/videos/preview/mixkit-man-holding-a-kickboxing-pose-39841-large.mp4" type="video/mp4">
         <source src="https://player.vimeo.com/external/459389137.sd.mp4?s=9e4fc4f2f0b78cf3fa976077ff653ccdfdbe649c&profile_id=165&oauth2_token_id=57447761" type="video/mp4">
@@ -253,10 +261,8 @@
 
     <div class="container">
         
-        <!-- Üst Premium Bilgi Rozeti -->
         <div class="opening-badge">Premium Lansman & Açılış</div>
 
-        <!-- Kulüp Kurumsal Kimlik -->
         <div class="header">
             <div class="logo-text-main">Under</div>
             <div class="logo-text-accent">Taekwondo</div>
@@ -264,7 +270,6 @@
             <div class="subtitle">Exclusive Training Club</div>
         </div>
 
-        <!-- 3 Branş Tek Metot Konsept Kutusu -->
         <div class="method-box">
             <div class="method-title">3 Branş • Tek Metot</div>
             <div class="branches">
@@ -274,32 +279,24 @@
             </div>
         </div>
 
-        <!-- İbrahimli Bölgesi Hedefli Geliştirilmiş VIP Butonlar -->
-        
-        <!-- WhatsApp VIP İletişim Hattı -->
-        <a href="https://wa.me/905550727670?text=Merhaba,%20%C4%B0brahimli%20Under%20Taekwondo%20Premium%20%C3%BCyelik%20ve%20tan%C4%B1%C5%9Fma%20seans%C4%B1%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum." class="btn btn-wp" target="_blank">
+        <a href="https://wa.me/905550727670?text=Merhaba,%20İbrahimli%20Under%20Taekwondo%20Premium%20üyelik%20ve%20tanışma%20seansı%20hakkında%20bilgi%20almak%20istiyorum." class="btn btn-wp" target="_blank">
             <span class="btn-icon">💬</span> VIP Özel WhatsApp Hattı
         </a>
 
-        <!-- Kurumsal Instagram Portfolyosu -->
         <a href="https://www.instagram.com/coach.ekremrh7/" class="btn btn-insta" target="_blank">
             <span class="btn-icon">📸</span> Kurumsal Instagram Portfolyosu
         </a>
 
-        <!-- Doğrudan Çağrı & Rezervasyon Hattı (En Baskın Buton) -->
         <a href="tel:+905550727670" class="btn btn-phone">
             <span class="btn-icon">📞</span> Özel Detaylı Bilgi & Rezervasyon
         </a>
 
-        <!-- Elit Kitleye Hitap Eden Metin -->
         <div class="cta-text">
             "Çocuklarınız ve kendiniz için en üst düzey disiplini, İbrahimli'nin en prestijli kulübünde deneyimleyin. Sınırlı kontenjan ile kişiye özel takip."
         </div>
         
-        <!-- Lokasyon -->
         <div class="location-tag">📍 İbrahimli, Gaziantep</div>
 
-        <!-- Footer Sembolik Kapanış -->
         <div class="footer">
             UNDER PERFORMANCE • COACH EKREM • © 2026 PRIVÉ
         </div>

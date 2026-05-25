@@ -21,33 +21,37 @@
         }
 
         body {
-            background-color: #060300;
+            background-color: #050301;
             color: #ffffff;
             overflow-x: hidden;
             display: block;
         }
 
-        /* PREMIUM SABİT ARKA PLAN GÖRSELİ (DÜZELTİLMİŞ KONTRAST) */
+        /* HEM MOBİLDE HEM MASAÜSTÜNDE BELİRGİN VE TAM UYUMLU ARKA PLAN */
         .bg-fixed {
             position: fixed;
             top: 0;
-            left: 0;
+            left: 50%;
+            transform: translateX(-50%);
             width: 100%;
+            max-width: 460px; /* Mobil dikey şablona tam oturması için kısıtlandı */
             height: 100%;
             z-index: -100;
             background-image: url('ekre.png');
             background-size: cover;
-            background-position: center;
-            filter: brightness(0.25) contrast(1.2);
+            background-position: center top;
+            filter: brightness(0.40) contrast(1.25) saturate(1.1); /* Arka tema çok daha belirgin hale getirildi */
         }
 
         .overlay {
             position: fixed;
             top: 0;
-            left: 0;
+            left: 50%;
+            transform: translateX(-50%);
             width: 100%;
+            max-width: 460px;
             height: 100%;
-            background: linear-gradient(180deg, rgba(6, 3, 0, 0.6) 0%, rgba(10, 5, 0, 0.98) 100%);
+            background: linear-gradient(180deg, rgba(5, 3, 1, 0.3) 0%, rgba(5, 3, 1, 0.85) 50%, rgba(5, 3, 1, 0.98) 100%);
             z-index: -99;
         }
 
@@ -55,11 +59,11 @@
             width: 100%;
             max-width: 460px;
             margin: 0 auto;
-            padding: 45px 20px;
+            padding: 40px 20px;
             text-align: center;
         }
 
-        /* GÖNDERDİĞİNİZ LOGOLARIN TAM SİMETRİK VE PARLAYAN YENİ HALİ */
+        /* LOGOLARIN TAM SİMETRİK, KESKİN VE PARLAYAN YENİ HALİ */
         .badge-row {
             display: flex;
             justify-content: center;
@@ -68,42 +72,38 @@
         }
 
         .logo-badge {
-            width: 68px;
-            height: 68px;
+            width: 76px;
+            height: 76px;
             background: #ffffff;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 8px;
-            box-shadow: 0 0 20px rgba(255, 115, 0, 0.6), inset 0 0 8px rgba(0,0,0,0.1);
-            border: 2px solid #ff7300;
+            padding: 10px;
+            box-shadow: 0 0 18px rgba(255, 115, 0, 0.75), inset 0 0 6px rgba(0,0,0,0.1);
+            border: 2.5px solid #ff7300;
             transition: transform 0.3s ease;
         }
 
-        .logo-badge:hover {
-            transform: scale(1.08);
-        }
-
-        .logo-badge img {
+        .logo-badge svg, .logo-badge img {
             width: 100%;
             height: 100%;
             object-fit: contain;
         }
 
-        /* HEADER & REKLAM TAMPONU */
+        /* HEADER & REKLAM AJANSI DOKUNUŞU */
         .header {
-            margin-bottom: 40px;
+            margin-bottom: 35px;
         }
 
         .logo-text-main {
-            font-size: 25pt;
+            font-size: 24pt;
             font-weight: 800;
             text-transform: uppercase;
             letter-spacing: 5px;
             line-height: 1.15;
             color: #ffffff;
-            text-shadow: 0 4px 15px rgba(0,0,0,0.6);
+            text-shadow: 0 4px 12px rgba(0,0,0,0.8);
         }
 
         .logo-text-accent {
@@ -115,28 +115,29 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             margin: 6px 0;
-            filter: drop-shadow(0 4px 10px rgba(255, 106, 0, 0.3));
+            filter: drop-shadow(0 4px 12px rgba(255, 106, 0, 0.45));
         }
 
         .subtitle {
             font-size: 8pt;
-            color: #d9c5b8;
+            color: #e3d3c8;
             text-transform: uppercase;
             letter-spacing: 6px;
             margin-top: 12px;
             font-weight: 600;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
         }
 
-        /* SOSYOLOG & REKLAM ODAKLI PREMIUM KARTLAR */
+        /* SOSYOLOG GÖZÜYLE PREMIUM BLOKLAR */
         .premium-card {
-            background: rgba(15, 8, 2, 0.45);
-            border: 1px solid rgba(255, 115, 0, 0.25);
+            background: rgba(12, 6, 2, 0.65); /* Kartlar şeffaflaştı, arka planı süzüyor */
+            border: 1px solid rgba(255, 115, 0, 0.35);
             border-radius: 24px;
-            padding: 30px 22px;
+            padding: 28px 22px;
             margin-bottom: 25px;
-            backdrop-filter: blur(25px);
-            -webkit-backdrop-filter: blur(25px);
-            box-shadow: 0 20px 45px rgba(0,0,0,0.6), inset 0 0 15px rgba(255, 115, 0, 0.05);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.7);
             text-align: left;
         }
 
@@ -146,10 +147,10 @@
             color: #ff881a;
             text-transform: uppercase;
             letter-spacing: 3px;
-            margin-bottom: 22px;
+            margin-bottom: 20px;
             text-align: center;
-            border-bottom: 1px solid rgba(255, 115, 0, 0.2);
-            padding-bottom: 14px;
+            border-bottom: 1px solid rgba(255, 115, 0, 0.25);
+            padding-bottom: 12px;
         }
 
         .branch-item {
@@ -166,18 +167,18 @@
             align-items: center;
             gap: 12px;
         }
-        .branch-header i { color: #ff7300; font-size: 13pt; text-shadow: 0 0 8px rgba(255,115,0,0.4); }
+        .branch-header i { color: #ff7300; font-size: 13pt; text-shadow: 0 0 8px rgba(255,115,0,0.5); }
         
         .branch-desc {
             font-size: 9.5pt;
-            color: #cfc0b4;
+            color: #decbc0;
             line-height: 1.6;
             padding-left: 28px;
         }
 
         .pro-text {
             font-size: 10pt;
-            color: #dcd0c5;
+            color: #e6dad0;
             line-height: 1.75;
             margin-bottom: 18px;
         }
@@ -194,7 +195,7 @@
             margin: 0 auto 18px auto;
             padding: 3px;
             background: linear-gradient(135deg, #ff8c1a, #ff3300);
-            box-shadow: 0 10px 30px rgba(255, 115, 0, 0.35);
+            box-shadow: 0 10px 30px rgba(255, 115, 0, 0.4);
         }
         .coach-avatar {
             width: 100%;
@@ -220,7 +221,7 @@
             margin-bottom: 18px;
         }
 
-        /* GÖRSELDEKİ BİREBİR DOLGUN PRESTİJ BUTONLARI */
+        /* REKABETÇİ AKSİYON BUTONLARI */
         .action-group {
             margin-top: 35px;
             width: 100%;
@@ -243,7 +244,7 @@
             letter-spacing: 2px;
             transition: transform 0.2s ease, box-shadow 0.2s ease;
             border: none;
-            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.6);
         }
 
         .btn-modern:active {
@@ -253,19 +254,19 @@
         .btn-call {
             background: #1a1a1a;
             color: #ffffff;
-            border: 1px solid rgba(255,255,255,0.08);
+            border: 1px solid rgba(255,255,255,0.1);
         }
         
         .btn-whatsapp {
             background: #25D366;
             color: #ffffff;
-            box-shadow: 0 8px 25px rgba(37, 211, 102, 0.25);
+            box-shadow: 0 8px 25px rgba(37, 211, 102, 0.35);
         }
 
         .btn-instagram {
             background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
             color: #ffffff;
-            box-shadow: 0 8px 25px rgba(220, 39, 67, 0.25);
+            box-shadow: 0 8px 25px rgba(220, 39, 67, 0.35);
         }
 
         .btn-modern i {
@@ -273,14 +274,15 @@
             margin-right: 14px;
         }
 
-        /* SOSYOLOJİK ETKİ ALT ALANI */
+        /* SOSYOLOJİK KAPANIŞ METNİ */
         .footer-cta {
             font-size: 9.5pt;
-            color: #bfaea4;
+            color: #decbc0;
             line-height: 1.8;
             margin: 35px 0 25px 0;
             padding: 0 10px;
             font-style: italic;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
         }
 
         .location-tag {
@@ -290,15 +292,16 @@
             letter-spacing: 4px;
             color: #ff881a;
             margin-bottom: 45px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
         }
 
         .footer-signature {
             font-size: 7.5pt;
-            color: #554a43;
+            color: #615349;
             letter-spacing: 2px;
             text-transform: uppercase;
             font-weight: 600;
-            border-top: 1px solid rgba(255,255,255,0.04);
+            border-top: 1px solid rgba(255,255,255,0.06);
             padding-top: 20px;
         }
     </style>
@@ -311,14 +314,31 @@
     <div class="container">
         
         <div class="badge-row">
-            <div class="logo-badge">
-                <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='45' fill='none'/><path d='M25 45c5-15 20-20 35-10s10 25-5 30-25-5-30-20z' fill='%23e31e24'/><path d='M35 55c10 10 25 5 30-5s-5-25-20-20-20 15-10 25z' fill='%230094d4'/><path d='M45 35c5-2 12 0 15 5s-1 12-6 12-11-5-11-12z' fill='%23f8a51b'/></svg>" alt="World Taekwondo">
+            <div class="logo-badge" title="World Taekwondo">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+                    <g transform="translate(5,5) scale(0.9)">
+                        <path d="M41.2 56.5c-4.8 6.2-12.5 13.2-22.4 16.4 5.8-9.8 11.2-21.4 12.8-29.2 1.2-5.8-.4-12.8-4.2-17.5 7.8 4.2 13.2 11.8 14.8 19.5.8 4-.2 8.2-1 10.8z" fill="#0094d4"/>
+                        <path d="M43.5 24.5c4.5-5.2 12.8-10.2 22.8-11.2-6.5 7.2-14.2 17.5-18.2 25.2-3 5.8-3.5 13.2-1.5 19-6.5-5.8-9.2-14.5-8.5-22.5.5-4 2.2-8.2 5.4-10.5z" fill="#e31e24"/>
+                        <path d="M51.8 42.5c2.5-.5 5.2 0 7.2 1.5 3.5 2.5 4.2 7.8 2 11.5-2 3.5-6.8 5-10.5 3.2 2.5-2 4-5.2 3.8-8.5-.2-3.2-1.2-6.2-2.5-7.7z" fill="#f8a51b"/>
+                        <path d="M32.5 36.2c.8-1.5 2.2-2.5 3.8-2.8-.5 1.5-.5 3.2 0 4.8-.8-1-2.2-1.5-3.8-2z" fill="#111111"/>
+                    </g>
+                </svg>
             </div>
-            <div class="logo-badge">
-                <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 60'><circle cx='23' cy='22' r='16' fill='none' stroke='%230085C7' stroke-width='3.5'/><circle cx='50' cy='22' r='16' fill='none' stroke='%23000000' stroke-width='3.5'/><circle cx='77' cy='22' r='16' fill='none' stroke='%23DF0024' stroke-width='3.5'/><circle cx='36.5' cy='38' r='16' fill='none' stroke='%23F4C300' stroke-width='3.5'/><circle cx='63.5' cy='38' r='16' fill='none' stroke='%23009F3D' stroke-width='3.5'/></svg>" alt="Olympic Rings">
+
+            <div class="logo-badge" title="Olympic Games">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 64">
+                    <circle cx="21" cy="23" r="15" fill="none" stroke="#0081C8" stroke-width="3.2"/>
+                    <circle cx="50" cy="23" r="15" fill="none" stroke="#000000" stroke-width="3.2"/>
+                    <circle cx="79" cy="23" r="15" fill="none" stroke="#EE334E" stroke-width="3.2"/>
+                    <circle cx="35.5" cy="39" r="15" fill="none" stroke="#FCB514" stroke-width="3.2"/>
+                    <circle cx="64.5" cy="39" r="15" fill="none" stroke="#00A651" stroke-width="3.2"/>
+                </svg>
             </div>
-            <div class="logo-badge">
-                <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23111111'><path d='M13.5 5.5c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zM9.8 8.9L7 23h2.1l2.4-10.9 2.5 2.4V23h2v-7.5l-2.1-2 1.1-5.5c1.3 1.5 3.2 2.5 5.5 2.5v-2c-2.1 0-3.9-1.2-4.7-3l-1-2.4c-.4-1-1.4-1.7-2.6-1.7-.6 0-1.2.2-1.7.5L4.2 8.5v4.5h2V9.9l1.6-.9-.6 3.4z'/></svg>" alt="Performance Athletes">
+
+            <div class="logo-badge" title="Athletic Performance">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path d="M13.5 5.5c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zM9.8 8.9L7 23h2.1l2.4-10.9 2.5 2.4V23h2v-7.5l-2.1-2 1.1-5.5c1.3 1.5 3.2 2.5 5.5 2.5v-2c-2.1 0-3.9-1.2-4.7-3l-1-2.4c-.4-1-1.4-1.7-2.6-1.7-.6 0-1.2.2-1.7.5L4.2 8.5v4.5h2V9.9l1.6-.9-.6 3.4z" fill="#111111"/>
+                </svg>
             </div>
         </div>
 
@@ -361,7 +381,7 @@
             </div>
             <div class="coach-name">COACH EKREM</div>
             <div class="coach-title">Kurucu & Başantrenör</div>
-            <p class="pro-text" style="font-style: italic; text-align: center; font-size: 9.5pt; color: #bfaea4;">
+            <p class="pro-text" style="font-style: italic; text-align: center; font-size: 9.5pt; color: #decbc0;">
                 "Geleceğin liderlerini, şampiyonluk disiplini ve güçlü bir karakter mimarisi ile bugünden yetiştiriyoruz."
             </p>
         </div>
